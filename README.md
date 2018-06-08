@@ -46,14 +46,14 @@ Configure the root of your repository with the following files and directories. 
   * uses promises to parse the JSON body of `POST` and `PUT` requests
   * uses the NodeJS `url` and `querystring` modules to parse the request url
 * create a router constructor that allows you to register custom routes for `GET`, `POST`, `PUT`, and `DELETE` requests
-* create a data model constructor that creates a _simple resource_ (notes) with at least 3 properties
+* create a data model constructor that creates a _simple resource_ (e.g. notes) with at least 3 properties
   * include an `id` property that is set to a unique id (**hint:** you'll need to use `node-uuid`)
   * include two additional properties of your choice (ex: name, content, etc.)
 * create a data model storage interface that can store data through different storage mechanisms.
   * create storage modules for in-memory and file-system storage
 
 ## Server Endpoints
-### `/api/vi/notes
+### `/api/vi/simple-resource-name
 * `POST` request
  * pass data as stringifed JSON in the body of a **POST** request to create a new resource
 * `GET` request
