@@ -33,3 +33,4 @@ describe('Router', () => {
     return router.route(req, res)
       .then(result => expect(result).toEqual(expected));
   });
+});
