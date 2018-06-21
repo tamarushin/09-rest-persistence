@@ -2,8 +2,9 @@
 
 let http = require('http');
 
-const router = require('./lib/router.js');
-require('./api/api.js');
+const router = require('../lib/router.js');
+require('../src/api/api.js');
+
 
 let isRunning = false;
 
