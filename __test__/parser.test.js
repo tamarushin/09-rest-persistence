@@ -2,19 +2,19 @@
 
 let parser = require('../lib/parser');
 
-xdescribe('URL Parser', () => {
+describe('URL Parser', () => {
 
   it('requires a request object', () => {
     let req = undefined;
     return parser(req)
-      .then(response => false)
+      .then(() => false)
       .catch(err => expect(err).toBeDefined());
   });
 
   it('requires a req object with a url', () => {
     let req = {};
     return parser(req)
-      .then(response => false)
+      .then(() => false)
       .catch(err => expect(err).toBeDefined());
 
   });
@@ -23,8 +23,7 @@ xdescribe('URL Parser', () => {
     let req = { url: 'http://localhost' };
     return parser(req)
       .then(request => expect(typeof request.url).toEqual('object'))
-      .catch(err => false);
-    
+      .catch(() => false);
   });
 
   it('given a complicated url, does all the things', () => {
@@ -36,6 +35,4 @@ xdescribe('URL Parser', () => {
       })
       .catch(console.error);
   });
-  
-  
 });

@@ -13,10 +13,10 @@ describe('Simple Proof of Life', () => {
   });
 
 
-  it('handles an invalid GET request if the route is not the correct route with a 404', (done) => {
+  xit('handles an invalid GET request if the route is not the correct route with a 404', (done) => {
 
     return superagent.get(`http://localhost:3000/api/v1`)
-      .then( () => {
+      .then(() => {
         expect(false).toBeTruthy(); //help from John
         done();
       })
@@ -50,7 +50,7 @@ describe('Simple Proof of Life', () => {
       .send(obj)
       .then(response => {
         expect(response.status.toEqual(200));
-        expect(JSON.parse(response.text)).toEqual(obj);('The true tales of the Heroine Tama');
+        expect(JSON.parse(response.text)).toEqual(obj); ('The true tales of the Heroine Tama');
       });
   });
 
@@ -66,7 +66,7 @@ describe('Simple Proof of Life', () => {
 
   xit('handles a post request to create my magazine info with unique ID along with JSON object', () => {
     let id = uuid(); //unique ID
-    let obj = { id:`${id}`, title: 'Brave Women', content: 'A Brave Heroine'};
+    let obj = { id: `${id}`, title: 'Brave Women', content: 'A Brave Heroine' };
     return superagent.post(`http://localhost:5000/api/v1/notes/`)
       .send(obj)
       .then(response => {
@@ -82,7 +82,7 @@ describe('Simple Proof of Life', () => {
         expect(response.toString()).toEqual('Error: ID Not Found');
       });
   });
-  
+
   xit('handles a DELETE request with a valid ID', () => {
     let id = 3232; //magazine with a valid ID
     return superagent.delete(`http://localhost:3000/api/v1/magazines?id=${id}`)
@@ -100,7 +100,7 @@ describe('Simple Proof of Life', () => {
   });
 
   xit('handles a good PUT request with JSON', () => {
-    let obj = { name: 'Tama', content: 'Super Heroine'};
+    let obj = { name: 'Tama', content: 'Super Heroine' };
     return superagent.put(`http://localhost:3000/api/v1/password/`)
       .send(obj)
       .then(response => {
